@@ -51,23 +51,33 @@
             transition: 0.3s;
         }
 
+        /* Header con posizionamento in basso per non coprire i visi */
         header {
-            padding: 100px 20px;
-            background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('imagis/IMG_3285.jpg');
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; 
+            padding: 40px 20px;
+            background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.4)), url('imagis/IMG_3285.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center top; /* Mantiene le teste visibili */
         }
 
-        .names { font-size: 3.2rem; margin-bottom: 10px; color: #333; }
+        .names { 
+            font-size: 3.2rem; 
+            margin-bottom: 0px; 
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.7);
+        }
 
         #countdown {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin: 25px 0;
+            margin: 20px 0 30px 0;
         }
         .countdown-item {
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             padding: 10px;
             min-width: 65px;
             border-radius: 4px;
@@ -106,11 +116,10 @@
 
         footer { padding: 60px 20px; font-size: 0.8rem; opacity: 0.6; }
 
-        /* Ottimizzazione Mobile */
         @media (max-width: 600px) {
+            header { min-height: 80vh; }
             .names { font-size: 2.4rem; }
             nav a { margin: 5px 8px; font-size: 0.7rem; }
-            header { padding: 70px 20px; }
             section { padding: 50px 20px; }
         }
     </style>
@@ -121,19 +130,19 @@
         <a href="#home">Home</a>
         <a href="#location">Dove</a>
         <a href="#lista-nozze">Lista Nozze</a>
-        <a href="#rsvp">RSVP</a>
+        <a href="#foto">Foto</a>
     </nav>
 
     <header id="home">
         <h1 class="names">Giada & Riccardo</h1>
-        <p style="letter-spacing: 4px; font-size: 0.9rem; font-weight: 300;">SI SPOSANO</p>
+        <p style="letter-spacing: 4px; font-size: 0.9rem; font-weight: bold; color: #333;">SI SPOSANO</p>
         
         <div id="countdown">
             <div class="countdown-item"><span id="days">00</span><label>Giorni</label></div>
             <div class="countdown-item"><span id="hours">00</span><label>Ore</label></div>
             <div class="countdown-item"><span id="minutes">00</span><label>Minuti</label></div>
         </div>
-        <p class="date">11 Luglio 2026</p>
+        <p class="date" style="font-weight: bold; color: #333;">11 Luglio 2026</p>
     </header>
 
     <section id="location">
@@ -158,17 +167,17 @@
         <p><small>Intestato a: Riccardo Rossi e Giada Bianchi</small></p>
     </section>
 
-    <section id="rsvp">
-        <h2>Conferma la tua presenza</h2>
+    <section id="foto">
+        <h2>I vostri scatti</h2>
         <div class="divider"></div>
-        <p>Per aiutarci con l'organizzazione, ti chiediamo di rispondere entro il 30 Giugno 2026.</p>
+        <p>Aiutateci a rendere questa giornata indimenticabile.<br>Caricate qui le foto e i video che scatterete durante il nostro matrimonio!</p>
         
         <div style="margin-top: 20px;">
-            <a href="https://docs.google.com/forms/d/e/IL_TUO_ID/viewform" target="_blank" class="btn">
-                Invia la tua conferma
+            <a href="IL_TUO_LINK_CONDIVISO" target="_blank" class="btn">
+                Carica le tue foto
             </a>
         </div>
-        <p style="margin-top: 15px; font-size: 0.75rem; color: #999;">Il modulo si aprirà in una nuova scheda</p>
+        <p style="margin-top: 15px; font-size: 0.75rem; color: #999;">Non serve registrazione, basta un click!</p>
     </section>
 
     <footer>
@@ -176,27 +185,21 @@
     </footer>
 
     <script>
-        // Blocco dello scroll automatico all'apertura
         if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
         window.scrollTo(0, 0);
 
-        // Configurazione Data Matrimonio
         const weddingDate = new Date("July 11, 2026 11:00:00").getTime();
-
         const timer = setInterval(function() {
             const now = new Date().getTime();
             const distance = weddingDate - now;
-
             document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
             document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
             if (distance < 0) {
                 clearInterval(timer);
                 document.getElementById("countdown").innerHTML = "OGGI È IL GRANDE GIORNO!";
             }
         }, 1000);
     </script>
-
 </body>
 </html>
