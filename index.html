@@ -116,38 +116,9 @@
 
         footer { padding: 60px 20px; font-size: 0.8rem; opacity: 0.6; }
 
-   @media (max-width: 600px) {
-            header { 
-                min-height: 80vh; 
-                /* Spostiamo l'ancoraggio della foto a sinistra per salvare il viso di Giada */
-                background-position: 30% top; 
-                
-                /* Spostiamo tutto il blocco testi/countdown a destra */
-                padding-left: 35%; 
-                padding-right: 5%;
-                
-                /* Allineiamo il testo a destra per un look più pulito */
-                text-align: right; 
-                justify-content: flex-end;
-                padding-bottom: 40px;
-            }
-
-            .names { 
-                font-size: 2.2rem; 
-                line-height: 1.1;
-            }
-
-            #countdown {
-                /* Allinea i quadratini a destra invece che al centro */
-                justify-content: flex-end; 
-                gap: 8px;
-            }
-
-            .countdown-item {
-                min-width: 50px;
-                padding: 8px;
-            }
-
+        @media (max-width: 600px) {
+            header { min-height: 80vh; }
+            .names { font-size: 2.4rem; }
             nav a { margin: 5px 8px; font-size: 0.7rem; }
             section { padding: 50px 20px; }
         }
