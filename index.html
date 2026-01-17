@@ -116,12 +116,18 @@
 
         footer { padding: 60px 20px; font-size: 0.8rem; opacity: 0.6; }
 
-        @media (max-width: 600px) {
-            header { min-height: 80vh; }
-            .names { font-size: 2.4rem; }
-            nav a { margin: 5px 8px; font-size: 0.7rem; }
-            section { padding: 50px 20px; }
-        }
+       @media (max-width: 600px) {
+    header { 
+        min-height: 80vh; 
+        /* Sposta la foto a destra: '20%' significa che il browser mostra 
+           molto più della parte sinistra della foto. 
+           Prova valori tra 0% e 30% per trovare il punto perfetto. */
+        background-position: 20% center; 
+    }
+    .names { font-size: 2.4rem; }
+    nav a { margin: 5px 8px; font-size: 0.7rem; }
+    section { padding: 50px 20px; }
+}
     </style>
 </head>
 <body>
