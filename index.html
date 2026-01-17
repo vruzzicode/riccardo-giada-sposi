@@ -9,6 +9,7 @@
     <style>
         :root {
             --primary-color: #d2b48c; /* Sabbia */
+            --sage-green: #87a96b;    /* VERDE SALVIA: Modifica qui la tonalità */
             --bg-color: #faf9f6;      
             --text-color: #4a4a4a;
             --accent-color: #bc9667;
@@ -26,7 +27,12 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
+        /* TITOLI DELLE SEZIONI in Verde Salvia */
+        h1, h2, h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 400; 
+            color: var(--sage-green); 
+        }
 
         /* Navbar */
         nav {
@@ -40,18 +46,20 @@
             justify-content: center;
             flex-wrap: wrap;
         }
+        /* MENU (HOME, DOVE, etc) in Verde Salvia */
         nav a {
             margin: 5px 12px;
             text-decoration: none;
-            color: var(--text-color);
+            color: var(--sage-green); 
             text-transform: uppercase;
             font-size: 0.75rem;
             letter-spacing: 1px;
             font-weight: bold;
             transition: 0.3s;
         }
+        nav a:hover { color: var(--accent-color); }
 
-        /* Header con posizionamento in basso per non coprire i visi */
+        /* Header */
         header {
             min-height: 85vh;
             display: flex;
@@ -60,13 +68,13 @@
             padding: 40px 20px;
             background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.4)), url('imagis/IMG_3285.jpg');
             background-size: cover;
-            background-position: center top; /* Mantiene le teste visibili */
+            background-position: center top;
         }
 
         .names { 
             font-size: 3.2rem; 
             margin-bottom: 0px; 
-            color: #333;
+            color: #333; /* Mantengo i nomi scuri per leggibilità sulla foto */
             text-shadow: 2px 2px 4px rgba(255,255,255,0.7);
         }
 
@@ -83,7 +91,13 @@
             border-radius: 4px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        .countdown-item span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--accent-color); }
+        /* NUMERI DEL COUNTDOWN in Verde Salvia */
+        .countdown-item span { 
+            display: block; 
+            font-size: 1.5rem; 
+            font-weight: bold; 
+            color: var(--sage-green); 
+        }
         .countdown-item label { font-size: 0.65rem; text-transform: uppercase; }
 
         section { padding: 80px 20px; max-width: 800px; margin: 0 auto; border-bottom: 1px solid #f0f0f0; }
@@ -116,24 +130,22 @@
 
         footer { padding: 60px 20px; font-size: 0.8rem; opacity: 0.6; }
 
-       @media (max-width: 600px) {
-    header { 
-        min-height: 80vh; 
-        /* Sposta la foto a destra: '20%' significa che il browser mostra 
-           molto più della parte sinistra della foto. 
-           Prova valori tra 0% e 30% per trovare il punto perfetto. */
-        background-position: 35% center; 
-    }
-    .names { font-size: 2.4rem; }
-    nav a { margin: 5px 8px; font-size: 0.7rem; }
-    section { padding: 50px 20px; }
-}
+        @media (max-width: 600px) {
+            header { 
+                min-height: 80vh; 
+                background-position: 35% center; 
+            }
+            .names { font-size: 2.4rem; }
+            nav a { margin: 5px 8px; font-size: 0.7rem; }
+            section { padding: 50px 20px; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="#home">Home</a>
+        <a href="#cerimonia">Cerimonia</a>
         <a href="#location">Dove</a>
         <a href="#lista-nozze">Lista Nozze</a>
         <a href="#foto">Foto</a>
