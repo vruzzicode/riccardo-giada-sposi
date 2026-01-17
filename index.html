@@ -8,11 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #d2b48c; /* Sabbia */
+            /* TAVOLO COLORI: Modifica questi codici per cambiare tutto il sito */
+            --primary-color: #d2b48c;   /* Sabbia */
+            --sage-green: #9caf88;      /* VERDE SALVIA: Modifica questo per i titoli */
             --bg-color: #faf9f6;      
             --text-color: #4a4a4a;
-            --sage-green: #87a96b;    /* Verde Salvia Elegante */
-            --accent-color: #87a96b;  /* Usiamo il salvia anche per i dettagli */
+            --accent-color: #bc9667;
         }
 
         html { scroll-behavior: smooth; }
@@ -27,7 +28,12 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
+        /* STRUTTURA TITOLI: Usano il verde salvia */
+        h1, h2, h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 400; 
+            color: var(--sage-green); 
+        }
 
         /* Navbar */
         nav {
@@ -52,7 +58,7 @@
             transition: 0.3s;
         }
 
-        /* Header con posizionamento in basso per non coprire i visi */
+        /* Header con posizionamento dinamico */
         header {
             min-height: 85vh;
             display: flex;
@@ -61,14 +67,15 @@
             padding: 40px 20px;
             background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.4)), url('imagis/IMG_3285.jpg');
             background-size: cover;
-            background-position: center top; /* Mantiene le teste visibili */
+            background-position: center top; 
         }
 
         .names { 
             font-size: 3.2rem; 
             margin-bottom: 0px; 
-            color: #333;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.7);
+            /* Il nome usa il verde salvia */
+            color: var(--sage-green);
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
         }
 
         #countdown {
@@ -84,17 +91,19 @@
             border-radius: 4px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        .countdown-item span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--accent-color); }
+        /* I numeri del countdown usano il verde salvia */
+        .countdown-item span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--sage-green); }
         .countdown-item label { font-size: 0.65rem; text-transform: uppercase; }
 
         section { padding: 80px 20px; max-width: 800px; margin: 0 auto; border-bottom: 1px solid #f0f0f0; }
 
-        .divider { width: 50px; height: 1px; background-color: var(--primary-color); margin: 20px auto; }
+        /* Divisore Verde Salvia */
+        .divider { width: 50px; height: 2px; background-color: var(--sage-green); margin: 20px auto; }
 
         .iban-box {
             background-color: #f1ede4;
             padding: 25px;
-            border: 1px dashed var(--accent-color);
+            border: 1px dashed var(--sage-green);
             font-family: monospace;
             font-size: 1.1rem;
             margin: 20px 0;
@@ -103,7 +112,7 @@
         }
 
         .btn {
-            background-color: var(--primary-color);
+            background-color: var(--sage-green); /* Pulsanti in verde salvia */
             color: white !important;
             padding: 16px 32px;
             text-decoration: none;
@@ -117,18 +126,20 @@
 
         footer { padding: 60px 20px; font-size: 0.8rem; opacity: 0.6; }
 
-       @media (max-width: 600px) {
-    header { 
-        min-height: 80vh; 
-        /* Sposta la foto a destra: '20%' significa che il browser mostra 
-           molto più della parte sinistra della foto. 
-           Prova valori tra 0% e 30% per trovare il punto perfetto. */
-        background-position: 35% center; 
-    }
-    .names { font-size: 2.4rem; }
-    nav a { margin: 5px 8px; font-size: 0.7rem; }
-    section { padding: 50px 20px; }
-}
+        /* OTTIMIZZAZIONE INTELLIGENTE MOBILE */
+        @media (max-width: 600px) {
+            header { 
+                min-height: 80vh; 
+                /* Sposta l'inquadratura per non tagliare la sposa a sinistra */
+                background-position: 25% top; 
+            }
+            .names { font-size: 2.4rem; }
+            nav a { margin: 5px 8px; font-size: 0.7rem; }
+            section { padding: 50px 20px; }
+            
+            /* Su mobile rendiamo il countdown leggermente più compatto */
+            .countdown-item { min-width: 55px; padding: 8px; }
+        }
     </style>
 </head>
 <body>
@@ -142,14 +153,14 @@
 
     <header id="home">
         <h1 class="names">Giada & Riccardo</h1>
-        <p style="letter-spacing: 4px; font-size: 0.9rem; font-weight: bold; color: #333;">SI SPOSANO</p>
+        <p style="letter-spacing: 4px; font-size: 0.9rem; font-weight: bold; color: #4a4a4a;">SI SPOSANO</p>
         
         <div id="countdown">
             <div class="countdown-item"><span id="days">00</span><label>Giorni</label></div>
             <div class="countdown-item"><span id="hours">00</span><label>Ore</label></div>
             <div class="countdown-item"><span id="minutes">00</span><label>Minuti</label></div>
         </div>
-        <p class="date" style="font-weight: bold; color: #333;">11 Luglio 2026</p>
+        <p class="date" style="font-weight: bold; color: #4a4a4a;">11 Luglio 2026</p>
     </header>
 
     <section id="location">
@@ -159,7 +170,7 @@
         <h3>Villa Foscarini Cornaro</h3>
         <p>Via Palazzi, 10<br>31040 Gorgo al Monticano (TV)</p>
         
-        <a href="https://www.google.com/maps/search/?api=1&query=Villa+Foscarini+Cornaro" target="_blank" class="btn">
+        <a href="https://www.google.com/maps/place/?q=place_id:ChIJy4kMj5PFfkcRd8_TJx2YcUE0" target="_blank" class="btn">
             Apri Navigatore
         </a>
     </section>
