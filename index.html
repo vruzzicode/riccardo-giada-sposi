@@ -1,1 +1,155 @@
 
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Nostro Matrimonio | Nome & Nome</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d2b48c; /* Colore Sabbia */
+            --bg-color: #faf9f6;      /* Off-white elegante */
+            --text-color: #4a4a4a;
+            --accent-color: #bc9667;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        header {
+            padding: 100px 20px;
+            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* Immagine segnaposto */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .names {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .date {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .divider {
+            width: 50px;
+            height: 1px;
+            background-color: var(--primary-color);
+            margin: 20px auto;
+        }
+
+        .info-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .iban-box {
+            background-color: #f1ede4;
+            padding: 20px;
+            border: 1px dashed var(--accent-color);
+            font-family: monospace;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        /* Form RSVP */
+        .rsvp-form-container {
+            margin-top: 40px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 800px; /* Altezza variabile in base al form */
+            border: none;
+        }
+
+        footer {
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="names">Luca & Marta</h1>
+        <p class="date">12 Settembre 2026</p>
+    </header>
+
+    <section id="location">
+        <h2>La Cerimonia e il Ricevimento</h2>
+        <div class="divider"></div>
+        <div class="info-box">
+            <h3>Villa Belvedere</h3>
+            <p>Via dei Fiori 12, Bellagio (CO)<br>
+            Ore 16:30</p>
+            <a href="https://goo.gl/maps/..." target="_blank" class="btn">Apri Mappe</a>
+        </div>
+    </section>
+
+    <section id="lista-nozze">
+        <h2>Un Pensiero per Noi</h2>
+        <div class="divider"></div>
+        <p>La vostra presenza è il regalo più bello. Se desiderate contribuire alla nostra vita insieme o al nostro viaggio di nozze, potete farlo qui:</p>
+        <div class="iban-box">
+            IT 99 X 01234 12345 000001234567
+        </div>
+        <p><small>Intestato a Luca Rossi e Marta Bianchi</small></p>
+    </section>
+
+    <section id="rsvp">
+        <h2>Conferma la tua presenza</h2>
+        <div class="divider"></div>
+        <p>Ti preghiamo di confermare entro il 30 Giugno.</p>
+        
+        <div class="rsvp-form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdwFqJ0X0yZfQ_yXm_yXm_yXm_yXm_yXm/viewform?embedded=true">Caricamento...</iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>Vi aspettiamo per festeggiare insieme!</p>
+    </footer>
+
+</body>
+</html>
