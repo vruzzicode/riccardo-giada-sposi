@@ -1,211 +1,211 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="robots" content="noindex">
-    <title>Il Nostro Matrimonio | Giada & Riccardo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #d2b48c; /* Sabbia */
-            --bg-color: #faf9f6;      
-            --text-color: #4a4a4a;
-            --accent-color: #bc9667;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="robots" content="noindex">
+    <title>Il Nostro Matrimonio | Giada & Riccardo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d2b48c; /* Sabbia */
+            --bg-color: #faf9f6;      
+            --text-color: #4a4a4a;
+            --accent-color: #bc9667;
+        }
 
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; }
 
-        body {
-            margin: 0; padding: 0;
-            font-family: 'Lato', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            text-align: center;
-            overflow-x: hidden;
-        }
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            text-align: center;
+            overflow-x: hidden;
+        }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
 
-        /* Navbar */
-        nav {
-            position: sticky;
-            top: 0;
-            background: rgba(250, 249, 246, 0.95);
-            padding: 10px 5px;
-            border-bottom: 1px solid #eee;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav a {
-            margin: 5px 12px;
-            text-decoration: none;
-            color: var(--text-color);
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+        /* Navbar */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 249, 246, 0.95);
+            padding: 10px 5px;
+            border-bottom: 1px solid #eee;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            margin: 5px 12px;
+            text-decoration: none;
+            color: var(--text-color);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-        /* Header con posizionamento in basso per non coprire i visi */
-        header {
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; 
-            padding: 40px 20px;
-            background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.4)), url('imagis/IMG_3285.jpg');
-            background-size: cover;
-            background-position: center top; /* Mantiene le teste visibili */
-        }
+        /* Header con posizionamento in basso per non coprire i visi */
+        header {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; 
+            padding: 40px 20px;
+            background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.4)), url('imagis/IMG_3285.jpg');
+            background-size: cover;
+            background-position: center top; /* Mantiene le teste visibili */
+        }
 
-        .names { 
-            font-size: 3.2rem; 
-            margin-bottom: 0px; 
-            color: #333;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.7);
-        }
+        .names { 
+            font-size: 3.2rem; 
+            margin-bottom: 0px; 
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.7);
+        }
 
-        #countdown {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0 30px 0;
-        }
-        .countdown-item {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 10px;
-            min-width: 65px;
-            border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .countdown-item span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--accent-color); }
-        .countdown-item label { font-size: 0.65rem; text-transform: uppercase; }
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0 30px 0;
+        }
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            min-width: 65px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .countdown-item span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--accent-color); }
+        .countdown-item label { font-size: 0.65rem; text-transform: uppercase; }
 
-        section { padding: 80px 20px; max-width: 800px; margin: 0 auto; border-bottom: 1px solid #f0f0f0; }
+        section { padding: 80px 20px; max-width: 800px; margin: 0 auto; border-bottom: 1px solid #f0f0f0; }
 
-        .divider { width: 50px; height: 1px; background-color: var(--primary-color); margin: 20px auto; }
+        .divider { width: 50px; height: 1px; background-color: var(--primary-color); margin: 20px auto; }
 
-        .iban-box {
-            background-color: #f1ede4;
-            padding: 25px;
-            border: 1px dashed var(--accent-color);
-            font-family: monospace;
-            font-size: 1.1rem;
-            margin: 20px 0;
-            word-break: break-all;
-            letter-spacing: 1px;
-        }
+        .iban-box {
+            background-color: #f1ede4;
+            padding: 25px;
+            border: 1px dashed var(--accent-color);
+            font-family: monospace;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            word-break: break-all;
+            letter-spacing: 1px;
+        }
 
-        .btn {
-            background-color: var(--primary-color);
-            color: white !important;
-            padding: 16px 32px;
-            text-decoration: none;
-            border-radius: 4px;
-            display: inline-block;
-            margin-top: 15px;
-            font-weight: bold;
-            transition: transform 0.2s;
-        }
-        .btn:active { transform: scale(0.98); }
+        .btn {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .btn:active { transform: scale(0.98); }
 
-        footer { padding: 60px 20px; font-size: 0.8rem; opacity: 0.6; }
+        footer { padding: 60px 20px; font-size: 0.8rem; opacity: 0.6; }
 
-       @media (max-width: 600px) {
-    header { 
-        min-height: 80vh; 
-        /* Sposta la foto a destra: '20%' significa che il browser mostra 
-           molto più della parte sinistra della foto. 
-           Prova valori tra 0% e 30% per trovare il punto perfetto. */
-        background-position: 35% center; 
-    }
-    .names { font-size: 2.4rem; }
-    nav a { margin: 5px 8px; font-size: 0.7rem; }
-    section { padding: 50px 20px; }
+       @media (max-width: 600px) {
+    header { 
+        min-height: 80vh; 
+        /* Sposta la foto a destra: '20%' significa che il browser mostra 
+           molto più della parte sinistra della foto. 
+           Prova valori tra 0% e 30% per trovare il punto perfetto. */
+        background-position: 35% center; 
+    }
+    .names { font-size: 2.4rem; }
+    nav a { margin: 5px 8px; font-size: 0.7rem; }
+    section { padding: 50px 20px; }
 }
-    </style>
+    </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#location">Dove</a>
-        <a href="#lista-nozze">Lista Nozze</a>
-        <a href="#foto">Foto</a>
-    </nav>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#location">Dove</a>
+        <a href="#lista-nozze">Lista Nozze</a>
+        <a href="#foto">Foto</a>
+    </nav>
 
-    <header id="home">
-        <h1 class="names">Giada & Riccardo</h1>
-        <p style="letter-spacing: 4px; font-size: 0.9rem; font-weight: bold; color: #333;">SI SPOSANO</p>
-        
-        <div id="countdown">
-            <div class="countdown-item"><span id="days">00</span><label>Giorni</label></div>
-            <div class="countdown-item"><span id="hours">00</span><label>Ore</label></div>
-            <div class="countdown-item"><span id="minutes">00</span><label>Minuti</label></div>
-        </div>
-        <p class="date" style="font-weight: bold; color: #333;">11 Luglio 2026</p>
-    </header>
+    <header id="home">
+        <h1 class="names">Giada & Riccardo</h1>
+        <p style="letter-spacing: 4px; font-size: 0.9rem; font-weight: bold; color: #333;">SI SPOSANO</p>
+        
+        <div id="countdown">
+            <div class="countdown-item"><span id="days">00</span><label>Giorni</label></div>
+            <div class="countdown-item"><span id="hours">00</span><label>Ore</label></div>
+            <div class="countdown-item"><span id="minutes">00</span><label>Minuti</label></div>
+        </div>
+        <p class="date" style="font-weight: bold; color: #333;">11 Luglio 2026</p>
+    </header>
 
-    <section id="location">
-        <h2>La Cerimonia e il Ricevimento</h2>
-        <div class="divider"></div>
-        <p>Siamo felici di accogliervi nella splendida cornice di</p>
-        <h3>Villa Foscarini Cornaro</h3>
-        <p>Via Palazzi, 10<br>31040 Gorgo al Monticano (TV)</p>
-        
-        <a href="https://www.google.com/maps/search/?api=1&query=Villa+Foscarini+Cornaro" target="_blank" class="btn">
-            Apri Navigatore
-        </a>
-    </section>
+    <section id="location">
+        <h2>La Cerimonia e il Ricevimento</h2>
+        <div class="divider"></div>
+        <p>Siamo felici di accogliervi nella splendida cornice di</p>
+        <h3>Villa Foscarini Cornaro</h3>
+        <p>Via Palazzi, 10<br>31040 Gorgo al Monticano (TV)</p>
+        
+        <a href="https://www.google.com/maps/search/?api=1&query=Villa+Foscarini+Cornaro" target="_blank" class="btn">
+            Apri Navigatore
+        </a>
+    </section>
 
-    <section id="lista-nozze">
-        <h2>Lista Nozze</h2>
-        <div class="divider"></div>
-        <p>Il regalo più grande sarà la vostra presenza.<br>Se desiderate dedicarci un pensiero, potete aiutarci a realizzare il nostro sogno di un viaggio in Giappone.</p>
-        <div class="iban-box">
-            IT 99 X 01234 12345 000001234567
-        </div>
-        <p><small>Intestato a: Riccardo Rossi e Giada Bianchi</small></p>
-    </section>
+    <section id="lista-nozze">
+        <h2>Lista Nozze</h2>
+        <div class="divider"></div>
+        <p>Il regalo più grande sarà la vostra presenza.<br>Se desiderate dedicarci un pensiero, potete aiutarci a realizzare il nostro sogno di un viaggio in Giappone.</p>
+        <div class="iban-box">
+            IT 99 X 01234 12345 000001234567
+        </div>
+        <p><small>Intestato a: Riccardo Rossi e Giada Bianchi</small></p>
+    </section>
 
-    <section id="foto">
-        <h2>I vostri scatti</h2>
-        <div class="divider"></div>
-        <p>Aiutateci a rendere questa giornata indimenticabile.<br>Caricate qui le foto e i video che scatterete durante il nostro matrimonio!</p>
-        
-        <div style="margin-top: 20px;">
-            <a href="IL_TUO_LINK_CONDIVISO" target="_blank" class="btn">
-                Carica le tue foto
-            </a>
-        </div>
-        <p style="margin-top: 15px; font-size: 0.75rem; color: #999;">Non serve registrazione, basta un click!</p>
-    </section>
+    <section id="foto">
+        <h2>I vostri scatti</h2>
+        <div class="divider"></div>
+        <p>Aiutateci a rendere questa giornata indimenticabile.<br>Caricate qui le foto e i video che scatterete durante il nostro matrimonio!</p>
+        
+        <div style="margin-top: 20px;">
+            <a href="IL_TUO_LINK_CONDIVISO" target="_blank" class="btn">
+                Carica le tue foto
+            </a>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.75rem; color: #999;">Non serve registrazione, basta un click!</p>
+    </section>
 
-    <footer>
-        <p>Realizzato con amore da Giada & Riccardo<br>© 2026</p>
-    </footer>
+    <footer>
+        <p>Realizzato con amore da Giada & Riccardo<br>© 2026</p>
+    </footer>
 
-    <script>
-        if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
-        window.scrollTo(0, 0);
+    <script>
+        if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+        window.scrollTo(0, 0);
 
-        const weddingDate = new Date("July 11, 2026 11:00:00").getTime();
-        const timer = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            if (distance < 0) {
-                clearInterval(timer);
-                document.getElementById("countdown").innerHTML = "OGGI È IL GRANDE GIORNO!";
-            }
-        }, 1000);
-    </script>
+        const weddingDate = new Date("July 11, 2026 11:00:00").getTime();
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "OGGI È IL GRANDE GIORNO!";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
