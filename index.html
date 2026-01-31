@@ -9,7 +9,7 @@
     <style>
         :root {
             --primary-color: #d2b48c; /* Sabbia */
-            --sage-green: #87a96b;    /* VERDE SALVIA: Modifica qui la tonalità */
+            --sage-green: #87a96b;    /* VERDE SALVIA */
             --bg-color: #faf9f6;      
             --text-color: #4a4a4a;
             --accent-color: #bc9667;
@@ -27,22 +27,19 @@
             overflow-x: hidden;
         }
 
-        /* TITOLI DELLE SEZIONI in Verde Salvia */
         h1, h2 { 
             font-family: 'Playfair Display', serif; 
             font-weight: 400; 
             color: var(--sage-green); 
         }
 
-        /* Definiamo H3 separatamente per dargli il colore del testo standard */
-       h3 {
-           font-family: 'Playfair Display', serif; 
-           font-weight: 400; 
-           color: var(--text-color); /* Questo lo rende uguale al resto del nero/grigio */
-           margin-top: 10px;
+        h3 {
+            font-family: 'Playfair Display', serif; 
+            font-weight: 400; 
+            color: var(--text-color);
+            margin-top: 10px;
         }
 
-        /* Navbar */
         nav {
             position: sticky;
             top: 0;
@@ -54,7 +51,6 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        /* MENU (HOME, DOVE, etc) in Verde Salvia */
         nav a {
             margin: 5px 12px;
             text-decoration: none;
@@ -67,7 +63,6 @@
         }
         nav a:hover { color: var(--accent-color); }
 
-        /* Header */
         header {
             min-height: 85vh;
             display: flex;
@@ -82,7 +77,7 @@
         .names { 
             font-size: 3.2rem; 
             margin-bottom: 0px; 
-            color: #333; /* Mantengo i nomi scuri per leggibilità sulla foto */
+            color: #333; 
             text-shadow: 2px 2px 4px rgba(255,255,255,0.7);
         }
 
@@ -99,7 +94,6 @@
             border-radius: 4px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        /* NUMERI DEL COUNTDOWN in Verde Salvia */
         .countdown-item span { 
             display: block; 
             font-size: 1.5rem; 
@@ -155,6 +149,7 @@
         <a href="#home">Home</a>
         <a href="#cerimonia">Cerimonia</a>
         <a href="#location">Dove</a>
+        <a href="#rsvp">Presenze</a>
         <a href="#lista-nozze">Lista Nozze</a>
         <a href="#foto">Foto</a>
     </nav>
@@ -177,10 +172,7 @@
         <p>La funzione religiosa si terrà alle ore 15:00 presso il</p>
         <h3>Duomo di San Mauro</h3>
         <p>Piazza Italia, 24<br>33085 Maniago (PN)</p>
-        
-        <a href="https://www.google.com/maps/dir/?api=1&destination=Duomo+di+San+Mauro+Maniago" target="_blank" class="btn">
-            Apri Navigatore
-        </a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Duomo+di+San+Mauro+Maniago" target="_blank" class="btn">Apri Navigatore</a>
     </section>
 
     <section id="location">
@@ -189,10 +181,17 @@
         <p>Siamo felici di accogliervi nella splendida cornice di</p>
         <h3>Villa Foscarini Cornaro</h3>
         <p>Via Palazzi, 10<br>31040 Gorgo al Monticano (TV)</p>
-        
-        <a href="https://www.google.com/maps/search/?api=1&query=Villa+Foscarini+Cornaro" target="_blank" class="btn">
-            Apri Navigatore
-        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Villa+Foscarini+Cornaro" target="_blank" class="btn">Apri Navigatore</a>
+    </section>
+
+    <section id="rsvp">
+        <h2>Conferma la tua presenza</h2>
+        <div class="divider"></div>
+        <p>Per aiutarci nell'organizzazione del ricevimento,<br>ti chiediamo di confermare la tua presenza e quella di eventuali accompagnatori entro il <strong>31 Maggio 2026</strong>.</p>
+        <p>Ti preghiamo inoltre di segnalarci eventuali intolleranze o allergie alimentari.</p>
+        <div style="margin-top: 20px;">
+            <a href="LINK_AL_GOOGLE_FORM" target="_blank" class="btn">Compila il modulo RSVP</a>
+        </div>
     </section>
 
     <section id="lista-nozze">
@@ -209,11 +208,8 @@
         <h2>I vostri scatti</h2>
         <div class="divider"></div>
         <p>Aiutateci a rendere questa giornata indimenticabile.<br>Caricate qui le foto e i video che scatterete durante il nostro matrimonio!</p>
-        
         <div style="margin-top: 20px;">
-            <a href="IL_TUO_LINK_CONDIVISO" target="_blank" class="btn">
-                Carica le tue foto
-            </a>
+            <a href="IL_TUO_LINK_CONDIVISO" target="_blank" class="btn">Carica le tue foto</a>
         </div>
         <p style="margin-top: 15px; font-size: 0.75rem; color: #999;">Non serve registrazione, basta un click!</p>
     </section>
@@ -226,7 +222,7 @@
         if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
         window.scrollTo(0, 0);
 
-        const weddingDate = new Date("July 11, 2026 11:00:00").getTime();
+        const weddingDate = new Date("July 11, 2026 15:00:00").getTime();
         const timer = setInterval(function() {
             const now = new Date().getTime();
             const distance = weddingDate - now;
