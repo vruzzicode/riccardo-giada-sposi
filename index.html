@@ -106,15 +106,24 @@
 
         .divider { width: 50px; height: 1px; background-color: var(--primary-color); margin: 20px auto; }
 
+        .iban-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
         .iban-box {
             background-color: #f1ede4;
             padding: 25px;
             border: 1px dashed var(--accent-color);
             font-family: monospace;
             font-size: 1.1rem;
-            margin: 20px 0;
             word-break: break-all;
             letter-spacing: 1px;
+            width: 90%;
+            max-width: 400px;
         }
 
         .btn {
@@ -126,6 +135,8 @@
             display: inline-block;
             margin-top: 15px;
             font-weight: bold;
+            border: none;
+            cursor: pointer;
             transition: transform 0.2s;
         }
         .btn:active { transform: scale(0.98); }
@@ -149,7 +160,6 @@
         <a href="#home">Home</a>
         <a href="#cerimonia">Cerimonia</a>
         <a href="#location">Dove</a>
-        <a href="#rsvp">Presenze</a>
         <a href="#lista-nozze">Lista Nozze</a>
         <a href="#foto">Foto</a>
     </nav>
@@ -184,24 +194,17 @@
         <a href="https://www.google.com/maps/search/?api=1&query=Villa+Foscarini+Cornaro" target="_blank" class="btn">Apri Navigatore</a>
     </section>
 
-    <section id="rsvp">
-        <h2>Conferma la tua presenza</h2>
-        <div class="divider"></div>
-        <p>Vi chiediamo gentilmente di confermare entro il <strong>31 Maggio 2026</strong>.</p>
-    
-        <div style="margin-top: 30px;">
-            <a href="https://forms.gle/IL_TUO_LINK_QUI" target="_blank" class="btn">
-                Compila la conferma
-            </a>
-        </div>
-    </section>
-
     <section id="lista-nozze">
         <h2>Lista Nozze</h2>
         <div class="divider"></div>
-        <p>Il dono più bello che possiate farci è essere con noi nel nostro grande giorno.<br> Se desiderate dedicarci un pensiero, potete contribuire alla realizzazione dei nostri futuri progetti di vita insieme.</p>
-        <div class="iban-box">
-            IT 99 X 01234 12345 000001234567
+        <p>Il dono più bello che possiate farci è essere con noi nel nostro grande giorno.<br> 
+        Se desiderate dedicarci un pensiero, potete contribuire alla realizzazione dei nostri futuri progetti di vita insieme.</p>
+        
+        <div class="iban-container">
+            <div class="iban-box" id="ibanText">IT 99 X 01234 12345 000001234567</div>
+            <button onclick="copyIban()" class="btn" style="margin-top: 0; padding: 10px 20px; font-size: 0.9rem;">
+                <span id="copyBtnText">Copia IBAN</span>
+            </button>
         </div>
         <p><small>Intestato a: Riccardo Rossi e Giada Bianchi</small></p>
     </section>
@@ -221,9 +224,26 @@
     </footer>
 
     <script>
+        // Blocco scroll automatico
         if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
         window.scrollTo(0, 0);
 
+        // Funzione Copia IBAN
+        function copyIban() {
+            const ibanValue = document.getElementById("ibanText").innerText;
+            const btnText = document.getElementById("copyBtnText");
+
+            navigator.clipboard.writeText(ibanValue).then(() => {
+                btnText.innerText = "Copiato!";
+                setTimeout(() => {
+                    btnText.innerText = "Copia IBAN";
+                }, 2000);
+            }).catch(err => {
+                console.error('Errore nel copia:', err);
+            });
+        }
+
+        // Countdown
         const weddingDate = new Date("July 11, 2026 15:00:00").getTime();
         const timer = setInterval(function() {
             const now = new Date().getTime();
